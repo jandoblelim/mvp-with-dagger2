@@ -7,4 +7,7 @@ package com.example.devskywalker.mvpwithdagger2sample.api;
 public interface IApiAuthenticator {
 
 
+    int refreshToken();
+
+    void forceLogout();
 }

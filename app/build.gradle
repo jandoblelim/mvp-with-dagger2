@@ -5,6 +5,9 @@ apply plugin: 'realm-android'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
+    packagingOptions {
+        exclude 'META-INF/**'
+    }
     defaultConfig {
         applicationId "com.example.devskywalker.mvpwithdagger2sample"
         minSdkVersion 15
@@ -17,6 +20,11 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            buildConfigField "String", "BRANCH", '"staging"'
+            debuggable true
         }
     }
 }

@@ -4,6 +4,7 @@ import android.app.Application;
 import android.support.v4.app.Fragment;
 
 import com.example.devskywalker.mvpwithdagger2sample.api.ApiConfig;
+import com.example.devskywalker.mvpwithdagger2sample.api.ApiModule;
 import com.example.devskywalker.mvpwithdagger2sample.api.IApiService;
 
 import javax.inject.Singleton;
@@ -17,12 +18,15 @@ import dagger.Component;
 @Singleton
 @Component(
         modules = {
-                AppModule.class
+                AppModule.class,
+                ApiModule.class
         }
 )
 public interface IAppComponent {
 
     Application application();
+
+    AppConfig appConfig();
 
     IApiService apiService();
 

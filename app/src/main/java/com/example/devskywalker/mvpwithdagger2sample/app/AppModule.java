@@ -25,4 +25,11 @@ public class AppModule {
     Application provideApplication() {
         return mApplication;
     }
+
+    @Provides
+    @Singleton
+    AppConfig provideAppConfig() {
+        return new AppConfig(mApplication);
+    }
+
 }

@@ -2,6 +2,8 @@ package com.example.devskywalker.mvpwithdagger2sample.app;
 
 import android.app.Application;
 
+import com.example.devskywalker.mvpwithdagger2sample.database.realm.RealmSampleRepository;
+
 /**
  * Created by admin on 14/7/17.
  */
@@ -15,10 +17,17 @@ public class App extends Application {
         super.onCreate();
 
         //let's initialize the appComponent
-        intializeAppComponent();
+        initializeAppComponent();
+
+        //let's intialize the realm repositories
+        initRealmRepository();
     }
 
-    private void intializeAppComponent() {
+    private void initRealmRepository() {
+        RealmSampleRepository.initialize(this);
+    }
+
+    private void initializeAppComponent() {
         mAppComponent = null;
         mAppComponent =
                 DaggerIAppComponent.builder()

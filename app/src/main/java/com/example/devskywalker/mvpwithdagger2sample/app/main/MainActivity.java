@@ -25,4 +25,10 @@ public class MainActivity extends AppCompatActivity implements IMainContract.Vie
                 .build()
                 .inject(this);
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mPresenter.onStart();
+    }
 }

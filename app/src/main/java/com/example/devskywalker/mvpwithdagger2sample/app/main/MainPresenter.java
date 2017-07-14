@@ -26,4 +26,8 @@ public class MainPresenter implements IMainContract.Presenter {
         mApiConfig = apiConfig;
     }
 
+    @Override
+    public void onStart() {
+
+    }
 }

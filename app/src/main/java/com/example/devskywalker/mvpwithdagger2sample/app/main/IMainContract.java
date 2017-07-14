@@ -13,5 +13,6 @@ public interface IMainContract {
 
     interface Presenter {
 
+        void onStart();
     }
 }
